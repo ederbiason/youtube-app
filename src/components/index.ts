@@ -3,3 +3,4 @@ export { Feed } from './Feed';
 export { ChannelDetail } from './ChannelDetail';
 export { VideoDetail } from './VideoDetail';
 export { SearchFeed } from './SearchFeed';
+export { SearchBar } from './SearchBar';

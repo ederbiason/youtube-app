@@ -1,10 +1,21 @@
 import { Stack } from "@mui/material"
 import { Link } from "react-router-dom"
 
-export const Navbar = () => {
-  return (
-    <Stack>
+import { logo } from "../utils/contants"
+import { SearchBar } from "./SearchBar"
 
-    </Stack>
-  )
-}
+export const Navbar = () => (
+  <Stack 
+    direction="row" 
+    alignItems="center"
+    p={2}
+    sx={{position: 'sticky', background: '#202020', top: 0, justifyContent: 'space-between'}}  
+  >
+    <Link to="/"
+      style={{display: 'flex', alignItems: 'center'}}
+    >
+      <img src={logo} alt="logo" height={45} />
+    </Link>
+    <SearchBar />
+  </Stack>
+)
