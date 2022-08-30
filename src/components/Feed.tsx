@@ -5,20 +5,9 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 import { Sidebar, Videos } from './';
 import { DataInterface } from '../types/interface';
 
-const initialVideoState = {
-  kind: '',
-  nextPageToken: '',
-  regionCode: '',
-  pageInfo: {
-    totalResults: 0,
-    resultsPerPage: 0
-  },
-  items: []
-}
-
 export const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('New')
-    const [videos, setVideos] = useState<DataInterface>(initialVideoState)
+    const [videos, setVideos] = useState<DataInterface[]>()
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)

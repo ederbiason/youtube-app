@@ -1,19 +1,47 @@
 export interface DataInterface {
-    kind:          string;
-    nextPageToken: string;
-    regionCode:    string;
-    pageInfo:      PageInfo;
-    items:         Item[];
+    // kind: string;
+    // nextPageToken: string;
+    // regionCode: string;
+    // pageInfo: PageInfo;
+    // items: { 
+        kind: ItemKind,
+        id: {
+            kind: IDKind;
+            videoId: string;
+            channelId: string;
+        },
+        snippet: {
+            publishedAt: Date;
+            title: string;
+            description: string;
+            thumbnails: Thumbnails;
+            channelTitle: string;
+            liveBroadcastContent: LiveBroadcastContent;
+            publishTime: Date;
+        }
+    // };
 }
 
-export interface Item {
-    kind:    ItemKind;
-    id:      ID;
-    snippet: Snippet;
-}
+// export interface Item {
+//     kind:    ItemKind;
+//     id:      {
+//         kind:    IDKind;
+//         videoId: string;
+//     };
+//     snippet: {
+//         publishedAt:          Date;
+//         channelId:            string;
+//         title:                string;
+//         description:          string;
+//         thumbnails:           Thumbnails;
+//         channelTitle:         string;
+//         liveBroadcastContent: LiveBroadcastContent;
+//         publishTime:          Date;
+//     };
+// }
 
 export interface ID {
-    kind:    IDKind;
+    kind: IDKind;
     videoId: string;
 }
 
@@ -26,14 +54,14 @@ export enum ItemKind {
 }
 
 export interface Snippet {
-    publishedAt:          Date;
-    channelId:            string;
-    title:                string;
-    description:          string;
-    thumbnails:           Thumbnails;
-    channelTitle:         string;
+    publishedAt: Date;
+    channelId: string;
+    title: string;
+    description: string;
+    thumbnails: Thumbnails;
+    channelTitle: string;
     liveBroadcastContent: LiveBroadcastContent;
-    publishTime:          Date;
+    publishTime: Date;
 }
 
 export enum LiveBroadcastContent {
@@ -42,17 +70,17 @@ export enum LiveBroadcastContent {
 
 export interface Thumbnails {
     default: Default;
-    medium:  Default;
-    high:    Default;
+    medium: Default;
+    high: Default;
 }
 
 export interface Default {
-    url:    string;
-    width:  number;
+    url: string;
+    width: number;
     height: number;
 }
 
 export interface PageInfo {
-    totalResults:   number;
+    totalResults: number;
     resultsPerPage: number;
 }
