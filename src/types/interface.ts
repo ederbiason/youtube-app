@@ -12,6 +12,7 @@ export interface DataInterface {
         },
         snippet: {
             publishedAt: Date;
+            channelId: string;
             title: string;
             description: string;
             thumbnails: Thumbnails;
