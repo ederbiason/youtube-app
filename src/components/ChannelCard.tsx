@@ -14,7 +14,13 @@ export const ChannelCard = ({ channelDetail }: IProps) => (
   <Box
     sx={{
       boxShadow: 'none',
-      borderRadius: '20px'
+      borderRadius: '20px',
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      width: { xs: '356px', md: '320px' },
+      height: '356px',
+      margin: 'auto'
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -42,6 +48,12 @@ export const ChannelCard = ({ channelDetail }: IProps) => (
           {channelDetail?.snippet?.title}
           <CheckCircle sx={{ fontSize: 14, color: 'gray', ml: '5px' }} />
         </Typography>
+
+        {/* {channelDetail?.statistics?.subscriberCount && (
+          <Typography>
+            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
+          </Typography>
+        )} */}
       </CardContent>
     </Link>
   </Box>
