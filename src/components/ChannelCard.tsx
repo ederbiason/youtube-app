@@ -7,10 +7,11 @@ import { Link } from "react-router-dom"
 import { demoProfilePicture } from '../utils/contants'
 
 interface IProps {
-  channelDetail: DataInterface
+  channelDetail?: DataInterface
+  marginTop?: string
 }
 
-export const ChannelCard = ({ channelDetail }: IProps) => (
+export const ChannelCard = ({ channelDetail, marginTop }: IProps) => (
   <Box
     sx={{
       boxShadow: 'none',
@@ -20,7 +21,8 @@ export const ChannelCard = ({ channelDetail }: IProps) => (
       justifyContent: 'center',
       width: { xs: '356px', md: '320px' },
       height: '356px',
-      margin: 'auto'
+      margin: 'auto',
+      marginTop: marginTop
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
