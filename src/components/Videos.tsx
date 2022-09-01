@@ -5,13 +5,14 @@ import { VideoCard, ChannelCard } from "./";
 
 interface IProps {
     videos?: DataInterface[];
+    direction?: string;
 }
 
-export const Videos = ({ videos }: IProps) => {
+export const Videos = ({ videos, direction }: IProps) => {
 
   return (
     <Stack 
-      direction="row" 
+      direction={direction ? 'column' : 'row'}
       flexWrap="wrap"
       justifyContent='start'
       gap={2}

@@ -26,6 +26,8 @@ export interface Image {
 export interface Snippet {
     title:       string;
     description: string;
+    channelId:   string;
+    channelTitle:string;
     customUrl:   string;
     publishedAt: Date;
     thumbnails:  Thumbnails;
@@ -54,5 +56,6 @@ export interface Statistics {
     viewCount:             string;
     subscriberCount:       string;
     hiddenSubscriberCount: boolean;
+    likeCount:             string;
     videoCount:            string;
 }
