@@ -20,7 +20,7 @@ export const VideoCard = ({ video: { id: { videoId }, snippet } }: IProps) => {
   return (
     <Card
       sx={{
-        width: { md: '320px', xs: '100%' },
+        width: { xs: '100%', sm: '358px', md: '320px' },
         boxShadow: 'none', 
         borderRadius: '0'
       }}
@@ -30,7 +30,9 @@ export const VideoCard = ({ video: { id: { videoId }, snippet } }: IProps) => {
           image={snippet?.thumbnails?.high?.url}
           about={snippet?.title} 
           sx={{
-            width: 358,
+            width: {
+              xs: '100%', sm: '358px', md: '320px'
+            },
             height: 180
           }} 
         />
